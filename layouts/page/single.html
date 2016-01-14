@@ -1,0 +1,16 @@
+	{{ partial "head.html" . }}
+	<body>
+	<div class="container">
+	{{ partial "meta.html" . }}
+		<div class="content">
+			<div class="post">
+			      {{ .Content }}
+			</div>
+			{{ if and (isset .Site.Params "disqusShortname") (ne .Site.Params.disqusShortname "") }}
+				<h2>留言</h2>
+				{{ partial "disqus" . }}
+			{{ end }}
+		</div>
+</div>
+	</body>
+</html>

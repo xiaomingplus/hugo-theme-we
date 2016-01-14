@@ -1,0 +1,36 @@
+	{{ partial "head.html" . }}
+	<body>
+	<div class="container">
+	{{ partial "meta.html" . }}
+		<div class="content">
+			<div class="post">
+			 	<h1>{{ .Title }}</h1>
+				<div class="post-meta single-post-meta"> <span class="post-date">{{ .Date.Format "2006年1月2日" }} </span>
+					<span class="post-meta-sep"> / </span>约{{ .ReadingTime }}分钟读完</span>
+					{{if .Params.categories }}<span class="post-meta-sep"> / </span>
+					分类:{{ range .Params.categories }}
+					<span class="post-category"><a href="/categories/{{ . | urlize }}/">{{ . }}</a></span>
+					{{ end }}
+					{{end}}
+					{{if .Params.tags }}<span class="post-meta-sep"> / </span>
+					{{ range .Params.tags }}
+					<span class="post-tags"><a href="/tags/{{ . | urlize }}/">#{{ . }}</a></span>
+					{{ end }}
+					{{end}}</div>
+			      {{ .Content }}
+				<div class="single-post-footer">
+					{{ if .Prev }}
+					<a class="previous" href="{{.Prev.Permalink}}"> &laquo;&nbsp;上一篇:{{.Prev.Title}}</a>
+					{{ end }}
+					{{ if .Next }}
+					<a class="next" href="{{.Next.Permalink}}"> 下一篇:{{.Next.Title}}&nbsp;&raquo;</a>
+					{{ end }}
+				</div>
+			</div>
+			{{ if and (isset .Site.Params "disqusShortname") (ne .Site.Params.disqusShortname "") }}
+				{{ partial "disqus" . }}
+			{{ end }}
+		</div>
+</div>
+	</body>
+</html>

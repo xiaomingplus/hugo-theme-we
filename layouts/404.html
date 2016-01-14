@@ -1,0 +1,11 @@
+{{ partial "head.html" . }}
+<body class="{{ .Site.Params.themeColor }}">
+<div class="container">
+{{ partial "meta.html" . }}
+    <div class="content">
+      <h1>404: 反正我是找不到该页面了</h1>
+        <p class="lead">看看网址,是不是哪输错了?或者返回 <a href="{{ .Site.BaseURL }}">首页</a> 看看呗.</p>
+    </div>
+</div>
+  </body>
+</html>

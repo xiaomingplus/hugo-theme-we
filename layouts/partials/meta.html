@@ -1,0 +1,5 @@
+<header>
+    <h3 class="site-logo"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h3>
+    <nav><ul class="site-menu">{{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}{{ range $name, $taxonomy := .Site.Taxonomies.categories }}<li><a href="/categories/{{ $name }}">{{ $name }}</a></li>{{ end }}{{ if .Site.Params.RSSLink}}<li><a href="{{ .Site.Params.RSSLink}}">RSS</a></li>{{else}}<li><a href="{{ .Site.RSSLink}}">RSS</a></li>{{end}}</ul></nav>
+</header>
+

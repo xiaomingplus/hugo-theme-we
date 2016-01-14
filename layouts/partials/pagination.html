@@ -1,0 +1,1 @@
+<section class="page">{{ if .Paginator.HasPrev }}<div class="page-link"><a href="{{ .Paginator.Prev.URL }}">&laquo;&nbsp;上一页</a></div>{{ end }}{{ if and (.Paginator.HasPrev) (.Paginator.HasNext) }}<span class="post-meta-sep"> / </span>{{ end }}{{ if .Paginator.HasNext }}<div class="page-link"><a href="{{ .Paginator.Next.URL }}">下一页&nbsp;&raquo;</a></div>{{ end }}</section>

@@ -1,0 +1,16 @@
+{{ partial "head.html" . }}
+<body>
+<div class="container">
+     {{ partial "meta.html" . }}
+    <section class="content">
+        <div class="posts">
+         {{ range .Paginator.Pages }}
+            {{ partial "article.html" . }}
+         {{ end }}
+        </div>
+    </section>
+    {{ partial "pagination.html" . }}
+    {{ partial "footer.html" . }}
+</div>
+</body>
+</html>

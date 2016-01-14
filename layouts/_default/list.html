@@ -1,0 +1,47 @@
+{{ partial "head.html" . }}
+<body>
+<div class="container">
+    {{ partial "meta.html" . }}
+    <section class="content">
+        <div class="taxonomy-description">
+            {{ if eq (.Data.Plural) ("tags") }}Tags{{ else if eq (.Data.Plural) ("categories")}}分类{{ end }}&nbsp;&raquo;&nbsp;{{  .Title  }}
+        </div>
+        <div class="posts">
+            {{ range .Paginator.Pages }}
+            {{ partial "article.html" . }}
+            {{ end }}
+        </div>
+    </section>
+
+    <section class="page">
+        {{ if .Paginator.HasPrev }}
+        <div class="page-link">
+            {{ if eq (.Data.Plural) ("tags") }}
+            <a href="/tags/{{ .Title | lower }}/page/{{ add -1 .Paginator.PageNumber }}">&laquo;&nbsp;上一页</a>
+            {{ else if eq (.Data.Plural) ("categories") }}
+            <a href="/categories/{{ .Title | lower }}/page/{{ add -1 .Paginator.PageNumber }}">&laquo;&nbsp;上一页</a>
+            {{ else }}
+            <a href="{{ .Paginator.Prev.URL }}">&laquo;&nbsp;上一页</a>
+            {{ end }}
+
+        </div>
+        {{ end }}
+        {{ if and (.Paginator.HasPrev) (.Paginator.HasNext) }}
+        <span class="post-meta-sep"> / </span>
+        {{ end }}
+        {{ if .Paginator.HasNext }}
+        <div class="page-link">
+
+            {{ if eq (.Data.Plural) ("tags") }}
+            <a href="/tags/{{ .Title | lower }}/page/{{ add 1 .Paginator.PageNumber }}">下一页&nbsp;&raquo;</a>
+            {{ else if eq (.Data.Plural) ("categories") }}
+            <a href="/categories/{{ .Title | lower }}/page/{{ add 1 .Paginator.PageNumber }}">下一页&nbsp;&raquo;</a>
+            {{ else }}
+            <a href="{{ .Paginator.Next.URL }}">下一页&nbsp;&raquo;</a>
+            {{ end }}
+        </div>
+        {{ end }}
+    </section>
+</div>
+</body>
+</html>

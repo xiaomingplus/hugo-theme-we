@@ -1,0 +1,10 @@
+name = "We"
+license = "MIT"
+licenselink = "https://github.com/xiaomingplus/hugo-theme-we/master/LICENSE.md"
+description = "An simple writer theme"
+tags = ["blog", "writer","publish"]
+features = ["blog", "themes", "disqus" ,"page" ,"tags"]
+min_version = 0.14
+[author]
+    name = "小明plus"
+    homepage = "http://xiaomingplus.com"
