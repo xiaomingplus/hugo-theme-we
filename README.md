@@ -2,6 +2,8 @@
 
 We是一款基于[hugo](http://hugo.spf13.com)的中文主题,简约而优雅,单栏,适合技术与写作类博客.
 
+Demo可以参见我的博客: http://xiaomingplus.com
+
 ![We screenshot](https://github.com/xiaomingplus/hugo-theme-we/blob/master/images/screenshot.png)
 
 ## 优点
@@ -14,7 +16,9 @@ We是一款基于[hugo](http://hugo.spf13.com)的中文主题,简约而优雅,�
 
 ## 如何安装呢?
 
-    git submodule add https://github.com/xiaomingplus/hugo-theme-we.git themes/we
+     git remote add -f we https://github.com/xiaomingplus/hugo-theme-we.git
+     git subtree add --prefix=themes/we we master --squash
+
     
 然后编辑你的配置文件:
 
