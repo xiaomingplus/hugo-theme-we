@@ -1,7 +1,13 @@
 <footer class="site-footer">
     <section class="copyright">
     {{if ne .Site.Params.hideHUGOSupport true}}
-        <a href="">{{.Site.Title}}</a>{{.Site.Copyright}} 由<a class="icon-hugo" href="http://gohugo.io">hugo</a>生成, 主题由<a class="icon-theme" href="https://github.com/xiaomingplus/hugo-theme-we">We</a>提供
+        <a href="/">{{.Site.Title}}</a>{{.Site.Copyright}} 由<a class="icon-hugo" href="http://gohugo.io">hugo</a>生成, 主题由<a class="icon-theme" href="https://github.com/xiaomingplus/hugo-theme-we">We</a>提供
     {{end}}
+
+
+
     </section>
 </footer>
+{{ if .Site.Params.tencentAnalyticsId }}
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId={{ .Site.Params.tencentAnalyticsId }}" charset="UTF-8"></script>
+{{ end }}

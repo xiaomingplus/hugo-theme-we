@@ -13,6 +13,7 @@ Demo可以参见我的博客: http://xiaomingplus.com
 * 支持分类/标签
 * 支持分页
 * 支持自定义导航
+* 支持百度/腾讯统计服务
 
 ## 如何安装呢?
 
@@ -47,6 +48,8 @@ Demo可以参见我的博客: http://xiaomingplus.com
 	    url = "/about"
 	[params]
 	  disqusShortname = "spf13"
+	  tencentAnalyticsId = "12345678"
+	  baiduAnalyticsId = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 
 ### 关于Disqus配置
