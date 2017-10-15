@@ -47,10 +47,14 @@ Demo可以参见我的博客: http://xiaomingplus.com
 	    identifier = "about"
 	    url = "/about"
 	[params]
-	  disqusShortname = "spf13"
-	  tencentAnalyticsId = "12345678"
-	  baiduAnalyticsId = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-
+        disqusShortname = "spf13"
+        tencentAnalyticsId = "12345678"
+        baiduAnalyticsId = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        gitalkClientID = "xx"
+        gitalkClientSecret = "xx"
+        gitalkRepo = "xiaomingplus.github.io"
+        gitalkOwner = "xiaomingplus"
+        gitalkAdmin = ["xiaomingplus"]
 
 ### 关于Disqus配置
 
@@ -68,6 +72,9 @@ params:
   disqusShortname: "spf13"
 ```
 
+### 关于gitalk的配置见
+
+<https://github.com/gitalk/gitalk>
 
 ## License
 

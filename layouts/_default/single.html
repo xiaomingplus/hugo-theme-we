@@ -26,10 +26,14 @@
 					<a class="next" href="{{.Next.Permalink}}"> 下一篇:{{.Next.Title}}&nbsp;&raquo;</a>
 					{{ end }}
 				</div>
-			</div>
-			{{ if and (isset .Site.Params "disqusShortname") (ne .Site.Params.disqusShortname "") }}
-				{{ partial "disqus" . }}
-			{{ end }}
+            </div>
+            {{ if .Site.Params.gitalkClientID }}
+                {{ partial "gitalk" .}}
+            {{ end }}
+
+            {{ if and (isset .Site.Params "disqusShortname") (ne .Site.Params.disqusShortname "") }}
+                {{ partial "disqus" . }}
+             {{ end }}
 		</div>
 </div>
 	</body>
