@@ -1,0 +1,15 @@
+<div id="gitalk-container"></div>
+<div>{{ .Site.Params.gitalkClientID }}</div>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+var clientID  = '{{ .Site.Params.gitalkClientID }}'
+var gitalk = new Gitalk({
+  clientID: clientID,
+  clientSecret: '{{ .Site.Params.gitalkClientSecret }}',
+  repo: '{{ .Site.Params.gitalkRepo }}',
+  owner: '{{ .Site.Params.gitalkOwner }}',
+  admin:{{ .Site.Params.gitalkAdmin }},
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
